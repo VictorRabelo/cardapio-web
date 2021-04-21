@@ -1,0 +1,17 @@
+<div id="notfound">
+    <div class="notfound-bg"></div>
+    <div class="notfound">
+        <div class="notfound-404">
+            <h1>404</h1>
+        </div>
+        <h2>Oops! Página Não Encontrada.</h2>
+        <h3 style="font-size: 14px; font-weight: 550;">
+            Digite o código da página procurada abaixo, e clique em pesquisar.
+        </h3>
+        <form class="notfound-search">
+            <input type="text" placeholder="Código da página..."
+                [(ngModel)]="codigoPagina" name="codigo" required="true">
+            <button type="button" (click)="pesquisar()">Pesquisar</button>
+        </form>
+    </div>
+</div>

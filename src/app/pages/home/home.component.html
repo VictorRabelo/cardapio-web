@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <nav class="nav-top nav-fill">
+        <div class="row text-center title">
+            <div class="col-12">
+                <div>Cardápio WEB</div>
+            </div>
+        </div>
+        <div class="row text-center header">
+            <img [src]="pathLogo" class="logo" alt="Logomarca" *ngIf="pathLogo"/>
+        </div>
+    </nav>
+
+    <div class="content scroll">
+        <div class="container-categoria" *ngFor="let catItem of cardapio.categorias">
+            <div class="row title-categoria">
+                <div class="col-12 py-2">
+                    <p class="pl-3 d-inline strong">{{ catItem.categoria.descricao }}</p>
+                </div>
+            </div>
+            <div class="row box-produto" *ngFor="let prod of catItem.produtos"
+                (click)="visulizarProduto(prod)">
+                <div class="col-8">
+                    <span class="descricao-produto strong gray">{{ prod.descricao }}</span>
+                </div>
+                <div class="col-4">
+                    <div class="float-right p-0 mx-1">
+                        <p class="d-inline description">A partir de<br><span class="ml-2 preco">R$ {{ prod.precoVenda | number: '1.2-2' }}</span></p>
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+<!-- Spinner -->
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" [fullScreen] = "true" *ngIf="loading"><p style="color: white">Carregando... </p></ngx-spinner>
+
+<app-alert [showMessage]="showMessageAlert" [message]="messageAlert" [severity]="severityAlert"></app-alert>

@@ -1,0 +1,30 @@
+.nav-top {
+    height: 200px;
+    max-height: 200px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+.nav-top  .header {
+    position: relative;
+    max-height: 100%;
+}
+
+.nav-top  .header .logo{
+    display: block;
+    margin: 0 auto;
+    max-width: 280px;
+    max-height: 160px;
+    cursor: pointer;
+}
+.content {
+    position: absolute;
+    top: 190px;
+    left: 0;
+    height: calc(100vh - 200px);
+    width: 100%;
+    z-index: 998;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

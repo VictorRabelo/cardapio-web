@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <nav class="nav-top nav-fill">
+        <div class="row text-center title">
+            <div class="col-12">
+                <span>Detalhes do Produto</span>
+            </div>
+        </div>
+        <div class="row text-center header">
+            <div class="col-12">
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" style="width: 100%;">
+                    <div ngxSlickItem class="slide" *ngFor="let img of imagens">
+                      <img id="carrosel" class="logo" [src]="img" alt="" width="100%" loading="lazy">
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        </div>
+    </nav>
+    <div class="content scroll p-0">
+        <div class="row p-0 text-center">
+            <div class="col-12">
+                <h5>{{ produto.descricao }}</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 title">
+                <span class="ml-2">Modo de Preparo: </span>
+            </div>
+            <div class="col-12">
+                <div class="ml-3" [innerHTML]="produto.textoLivre"></div>
+            </div>
+        </div>
+    </div>
+</div>
